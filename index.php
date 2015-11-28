@@ -17,6 +17,7 @@
 		
 		<!-- Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Aguafina+Script' rel='stylesheet' type='text/css'>
 		
 		<!-- Extras -->
 		<link href="assets/css/animate.css" rel="stylesheet">
@@ -41,7 +42,7 @@
                     </div>
                 </div>
                 <div clas="col-md-8 col-sm-12">
-                    <h1 class="maintitle">Do a <span>Bit</span> for someone, <br>get some coins</h1>
+                    <h1 class="maintitle">Do a <span>Bit</span> for some <span>Coins</span>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <img class="maingraphic" src="assets/images/opengraph.png"

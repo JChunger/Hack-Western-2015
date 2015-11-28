@@ -234,6 +234,9 @@ h6 {font-size: 16px;}
     z-index: 1000;
     font-size: 4em;
 }
+.maintitle span {
+	font-family: 'Aguafina Script';
+}
 .maingraphic {
     margin-left: 800px;
     margin-top: -290px;
