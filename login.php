@@ -7,8 +7,8 @@
 		<meta name="author" content="">
 	
 		<title>
-		  
-		    BitFor.me
+
+		    BitFor.me - Login
 		  
 		</title>
 	
@@ -25,6 +25,58 @@
 	</head>
 	<body background="assets\images\mainbg.jpg">
 	
+        <?php
+if (isset($_POST['logbtn'])) {
+    $meow = strip_tags(htmlentities($_POST['uname']));
+    $kitty = strip_tags(htmlentities($_POST['pword']));
+    $error = array();
+    
+    $que1 = $odb -> prepare('SELECT * FROM `users` WHERE username = :uname');
+    $que1 -> execute(array(':uname' => $meow));
+    $check = $que1 -> fetch(PDO::FETCH_ASSOC);
+    
+    if (empty($meow) || empty($kitty)) {
+        $error[] = 'Please fill in all the fields!';
+    
+    }
+    if (strlen($kitty) < 3) {
+        $error[] = 'Password has to be longer than 4 characters';
+    }
+    if (!$check) {
+        $error[] = 'Invalid name';
+    }
+    if ($check['veri'] == 0) {
+        $error[] = 'Verify your email!';
+        
+    }
+    if (empty($error)) {
+        echo 'success';
+        $login = $odb -> prepare("SELECT * FROM `users` WHERE username = :uname AND password = :pword");
+        $login -> execute(array(":uname" => $meow, ":pword" => (hash_hmac('sha512', $kitty, 'few!#@$fSFaflF:a^sdD:'))));
+        $sqllog = $login -> fetch(PDO::FETCH_ASSOC);
+        session_start();
+        $_SESSION['username'] = $sqllog['username'];
+        $_SESSION['ID'] = $sqllog['ID'];
+        $_SESSION['city'] = $city;
+        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip AND city = :citty WHERE ID = :id");
+        $gg -> execute(array('lip'=> $_SERVER['REMOTE_ADDR'], ":citty" => $city, ":id" => $_SESSION['ID']));
+        echo '<meta http-equiv="refresh" content="3;url=post.php">';
+        
+        
+    
+    }
+    else {
+        echo '<div class="alert alert-danger">';
+        foreach($error as $mir) {
+            echo $mir,'<br>';
+        }
+        echo '</div>';
+    }
+}
+
+
+?>
+    
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
