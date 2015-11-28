@@ -1,7 +1,7 @@
-#Hack Western 2015 - Bitcoin duck thing
+#Hack Western 2015 - BitFor.me
 
 ##Concepts
-* User fills account with BTC
-* User finds people in area who want something done
-* User performs action
-* User gets paid with others' BTC
+* Deposite Bitcoins
+* Post basic tasks 
+* Pay people to complete tasks for you
+* Everyone wins : )
