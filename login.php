@@ -3,7 +3,6 @@ require_once('includes/main.php');
 $hi = file_get_contents('http://api.db-ip.com/addrinfo?addr='.$_SERVER['REMOTE_ADDR'].'&api_key=28e0a27064ac615d11b8b7b936de672de7f429de');
 $object = json_decode($hi);
 $city = $object->city;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +14,7 @@ $city = $object->city;
 	
 		<title>
 		  
-		    Do My Bit
+		    BitFor.me
 		  
 		</title>
 	
@@ -62,7 +61,7 @@ if (isset($_POST['logbtn'])) {
         $error[] = 'Please fill in all the fields!';
     
     }
-    if (strlen($kitty) < 6) {
+    if (strlen($kitty) < 3) {
         $error[] = 'Password has to be longer than 4 characters';
     }
     if (!$check) {
@@ -80,10 +79,10 @@ if (isset($_POST['logbtn'])) {
         session_start();
         $_SESSION['username'] = $sqllog['username'];
         $_SESSION['ID'] = $sqllog['ID'];
-        
-        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip AND city = :city WHERE ID = :id");
-        $gg -> execute(array('lip'=> $_SERVER['REMOTE_ADDR'], ":city" => $city, ":id" => $_SESSION['ID']));
-        
+        $_SESSION['city'] = $city;
+        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip AND city = :citty WHERE ID = :id");
+        $gg -> execute(array('lip'=> $_SERVER['REMOTE_ADDR'], ":citty" => $city, ":id" => $_SESSION['ID']));
+        echo '<meta http-equiv="refresh" content="3;url=post.php">';
         
         
     
@@ -111,7 +110,7 @@ if (isset($_POST['logbtn'])) {
                              </span>
                             <br>
                             <br>
-                            <a class="logsign" href="indexsign">Don't have an account? Click here!</a>
+                            <a lass="logsign" href="indexsign">Don't have an account? Click here!</a>
                             </form>
                         </div>
                     </div>

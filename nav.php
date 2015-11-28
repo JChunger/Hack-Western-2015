@@ -15,12 +15,28 @@
 	    <!-- Start Navigation -->
 	    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
 	      <ul class="nav navbar-nav">
+              <?php if(!isset($_SESSION['username'])) { ?>
 	        <li>
 	          <a href="login.php">Log In</a>
 	        </li>
 	        <li>
 	          <a href="#">Sign Up</a>
 	        </li>
+              <?php } else {?>
+                  <li>
+                  <a href="post.php">Post</a>
+                </li>
+                <li>
+                  <a href="find.php">Find</a>
+                </li>
+                <li>
+                  <a href="inbox.php">Inbox</a>
+                </li>
+                <li>
+                  <a href="logout.php">Logout</a>
+                </li>
+              
+              <?php } ?>
 	      </ul>
 	    </nav>
 	  </div>
