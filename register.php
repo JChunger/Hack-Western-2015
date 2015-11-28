@@ -24,9 +24,7 @@
 		<link href="assets/css/stylelog2.css" rel="stylesheet">
 	</head>
 	<body background="assets\images\mainbg.jpg">
-	<?php
-		if 
-	?>
+	
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
