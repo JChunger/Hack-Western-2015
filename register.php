@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row">
                 <div class="bglayer">
-                    <p style="color:black">d</p>
+                    <p style="color:transparent">d</p>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="section-1">

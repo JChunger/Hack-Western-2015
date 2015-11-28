@@ -219,7 +219,7 @@ h6 {font-size: 16px;}
     position: absolute;
     z-index: -2;
     margin-left: -50px;
-    border-radius; 50px;
+    border-radius: 50px;
 }
 .form-signin-heading2 {
     text-align: center;
