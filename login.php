@@ -14,7 +14,7 @@ $city = $object->city;
 	
 		<title>
 		  
-		    BitFor.me
+		    BitFor.me Login
 		  
 		</title>
 	
