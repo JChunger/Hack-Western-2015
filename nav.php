@@ -1,6 +1,7 @@
 <?php
-$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
-$tree = $check1 -> fetchColumn(0);
+	require_once 'db.php';
+	$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
+	$tree = $check1 -> fetchColumn(0);
 ?>
 <!-- Start Header
 	================================================== -->
