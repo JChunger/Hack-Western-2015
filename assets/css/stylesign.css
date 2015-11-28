@@ -1,3 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
 body {
 	color: black;
 	font: normal 16px "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5,8 +15,12 @@ body {
 	background-color: white;
 	overflow-x: hidden;
 	line-height: 1.5;
+    background-size: 100%;
 }
-
+.mainbg {
+    height: 100%;
+    width: 100%;
+}
 a {
 	color: #3498db;
 	cursor: pointer;
@@ -183,13 +197,21 @@ h6 {font-size: 16px;}
 .header-button {
 	margin-left: 15px;
 }
+.navbar-inverse .navbar-toggle {
+	background-color: #34495e;
+	border-color: #2c3e50;
+	margin-top: 23px;
+}
+.navbar-inverse .navbar-toggle:focus {
+	outline: none;
+}
 
 /*	Hero
 	==================================================*/
 .mainbg {
-    width: 1440px;
+    width: 144spx;
     margin-left: -150px;
-    margin-top: -100px;
+    margin-top: -200px;
     position: absolute;
     z-index: -100;
 }
@@ -197,8 +219,8 @@ h6 {font-size: 16px;}
     background: #ff9900;
     opacity: 0.75;
     margin-left: 265px;
-    max-width: 500px;
-    width: 80%;
+    max-width: 600px;
+    width: 100%;
     height: 450px;
     position: absolute;
     z-index: -1;
@@ -211,40 +233,48 @@ h6 {font-size: 16px;}
     margin-top: 90px;
     z-index: 1000;
     font-size: 4em;
+    margin-right: 10px;
 }
 .form-login {
     margin-left: -100px;
+    postition: absolute;
 }
 #userName {
     height: 45px;
     width:  450px;
-    margin-left: -30px;
+    margin-left: -46px;
+    position: absolute;
 }
 #userPassword {
+    margin-top: 30px;
+    margin-left: -46px;
     height: 45px;
     width:  450px;
-    margin-left: -30px;
-}
-#userEmail {
-    height: 45px;
-    width:  450px;
-    margin-left: -30px;
-}
-#userPhone {
-    height: 45px;
-    width:  450px;
-    margin-left: -30px;
+    dislay: block
+    position: absolute;
 }
 .group-btn {
-    margin-left: 150px;
+    margin-left: 144px;
     padding: 5px;
+    position: absolute;
 }
 .logsign {
-    margin-left: 50px;
+    margin-left: 57px;
     color: white;
-    margin-top:-500px;
+    position: absolute;
 }
-
+@media screen and (max-width: 1200px) {
+    .bglayer {margin-left: 185px;}
+}
+@media screen and (max-width: 992px) {
+    .bglayer {
+        width: 650px;
+        margin-left: 55px;
+    }
+    .userName, .userPassword{
+        margin-left: -760px;
+    }
+}
 
 
 
