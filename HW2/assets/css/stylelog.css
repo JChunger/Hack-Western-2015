@@ -225,6 +225,7 @@ h6 {font-size: 16px;}
     margin-top: 90px;
     z-index: 1000;
     font-size: 4em;
+    margin-right: 10px;
 }
 .form-login {
     margin-left: -100px;
@@ -233,24 +234,24 @@ h6 {font-size: 16px;}
 #userName {
     height: 45px;
     width:  450px;
-    margin-left: -30px;
+    margin-left: -46px;
     position: absolute;
 }
 #userPassword {
     margin-top: 30px;
-    margin-left: -30px;
+    margin-left: -46px;
     height: 45px;
     width:  450px;
     dislay: block
     position: absolute;
 }
 .group-btn {
-    margin-left: 150px;
+    margin-left: 144px;
     padding: 5px;
     position: absolute;
 }
 .logsign {
-    margin-left: 50px;
+    margin-left: 57px;
     color: white;
     position: absolute;
 }
