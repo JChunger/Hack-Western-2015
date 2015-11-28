@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div clas="col-md-8">
-                    <h1 class="maintitle">Do A <span>Bit</span> For Someone, <br>Get some coins</h1>
+                    <h1 class="maintitle">Do a <span>Bit</span> for someone, <br>Get some coins.</h1>
                 </div>
                 <div class="col-md-4">
                     <img class="maingraphic" src="assets/images/opengraph.png"
