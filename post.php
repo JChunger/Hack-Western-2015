@@ -8,38 +8,38 @@ if (!isset($_SESSION['username'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+  <head>
         <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="author" content="">
-	
-		<title>
-		  
-		    BitFor.Me - Post Task
-		  
-		</title>
-	
-		<!-- Bootstrap core CSS -->
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-		
-		<!-- Fonts -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		
-		<!-- Extras -->
-		<link href="assets/css/animate.css" rel="stylesheet">
-		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
-		<link href="assets/css/stylehome.css" rel="stylesheet">
-	</head>
-	<body>
-	
-	<?php include('nav.php') ?>
-	
-	<!-- Start Hero Section
-	================================================== -->
-	<div style="margin-top: 10%;" class="container">
-	    <div class="row">
-	        <div class="panel panel-success">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>
+      
+        BitFor.Me - Post Task
+      
+    </title>
+  
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    
+    <!-- Extras -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="assets/css/stylehome.css" rel="stylesheet">
+  </head>
+  <body>
+  
+  <?php include('nav.php') ?>
+  
+  <!-- Start Hero Section
+  ================================================== -->
+  <div style="margin-top: 10%;" class="container">
+      <div class="row">
+          <div class="panel panel-success">
                  <div class="panel-heading">Post Simple Task!</div>
                     <div class="panel-body">
                       <?php
@@ -90,12 +90,12 @@ if (!isset($_SESSION['username'])) {
                     </div>
                 </div>            
             </div>
-	    </div>
-	</div>
-	
-	<div class="container">
-	    <div class="row">
-       	        <div class="panel panel-success">
+      </div>
+  </div>
+  
+  <div class="container">
+      <div class="row">
+                <div class="panel panel-success">
 
         <header class="panel-heading">
                           Your posts!
@@ -110,23 +110,22 @@ if (isset($_POST['delbtn'])) {
     $hue = $odb -> query("UPDATE `services` SET closed = 1 WHERE ID = '".$postd."'");
     echo '<div class="alert alert-success">Post has been deleted</div> ';
 }
-
 ?>
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>Description</th>
-									<th>Address</th>
-									<th>Amount</th>
-									<th>Close</th>
+                  <th>Address</th>
+                  <th>Amount</th>
+                  <th>Close</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?PHP
-								$ez = $odb -> query("SELECT * FROM `services` WHERE `uid` = '".$_SESSION['ID']."' AND `closed` = 0");
-								while ($mme = $ez -> fetch(PDO::FETCH_ASSOC)) {
-								?>
+                $ez = $odb -> query("SELECT * FROM `services` WHERE `uid` = '".$_SESSION['ID']."' AND `closed` = 0");
+                while ($mme = $ez -> fetch(PDO::FETCH_ASSOC)) {
+                ?>
                                 <tr>
                                     <td><?php echo $mme['ID']; ?></td>
                                     <td><?php echo $mme['title']; ?></td>
@@ -137,21 +136,21 @@ if (isset($_POST['delbtn'])) {
                                 </tr>
                                     <?php } ?>
                                 </tbody>
-								
+                
             </table>
-	    </div
+      </div
         </section>
         
-	</div>
-	<!-- Bootstrap core JavaScript
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="assets/js/jquery-1.10.2.min.js"></script>
-	<script src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/waypoints.min.js"></script>
-	<script src="assets/js/jquery.scrollto.min.js"></script>
-	<script src="assets/js/jquery.localscroll.min.js"></script>
-	<script src="assets/js/jquery.prettyPhoto.js"></script>
-	<script src="assets/js/scripts.js"></script>
-	</body>
+  </div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/jquery-1.10.2.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.scrollto.min.js"></script>
+  <script src="assets/js/jquery.localscroll.min.js"></script>
+  <script src="assets/js/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  </body>
 </html>
