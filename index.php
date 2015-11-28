@@ -8,7 +8,7 @@
 	
 		<title>
 		  
-		    BitFor.Me - Easy Tasks, Easy Money
+		    BitFor.me - Easy Tasks, Easy Money
 		  
 		</title>
 	
