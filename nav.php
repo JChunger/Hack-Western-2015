@@ -25,7 +25,7 @@
 	          <a href="login.php">Log In</a>
 	        </li>
 	        <li>
-	          <a href="indexsign.php">Sign Up</a>
+	          <a href="register.php">Sign Up</a>
 	        </li>
               <?php } else {?>
                   <li>
