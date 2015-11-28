@@ -1,3 +1,8 @@
+<?php
+
+$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
+$tree = $check1 -> fetchColumn(0);
+?>
 <!-- Start Header
 	================================================== -->
 	<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
@@ -20,7 +25,7 @@
 	          <a href="login.php">Log In</a>
 	        </li>
 	        <li>
-	          <a href="indexsign.php">Sign Up</a>
+	          <a href="#">Sign Up</a>
 	        </li>
               <?php } else {?>
                   <li>
@@ -34,6 +39,13 @@
                 </li>
                 <li>
                   <a href="logout.php">Logout</a>
+                </li>
+                <li>
+                    <a href="deposite.php">Deposite</a>
+                </li>
+                <li>
+                    <a >Balance: <?php $ighh = $tree/100000000; print number_format($ighh, 8);
+; ?> BTC</a>
                 </li>
               
               <?php } ?>

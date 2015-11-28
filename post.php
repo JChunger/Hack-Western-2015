@@ -48,9 +48,20 @@ if (!isset($_SESSION['username'])) {
     $desc = strip_tags(htmlentities($_POST['desc']));
     $address = strip_tags(htmlentities($_POST['address']));
     $amount = intval($_POST['amount']*100000000);
+    $krill = array();
+    
+    if (empty($title) || empty($desc) || empty($address) || empty($amount)){
+     $krill[] = 'Please Fill in all the Fields';
+    }
+    if ($tree > $amount && empty($krill)) {
     $killa = $odb->prepare("INSERT INTO `services` VALUES(NULL, :uid, :title, :desc, :addy, :amount, 0, 0, :city, UNIX_TIMESTAMP())");
     $killa -> execute(array(':uid' => $_SESSION['ID'], ':title' => $title, ':desc' => $desc, ':addy' => $address, ':amount' => $amount, ':city' => $_SESSION['city']));
     echo '<div class="alert alert-success">Your Task has been Posted!</div>';
+    }
+    else {
+        echo '<div class="alert alert-danger">You have insufficiant funds.</div>';
+    
+    }
 }
     
     ?>
@@ -96,7 +107,7 @@ if (!isset($_SESSION['username'])) {
                                <?php 
 if (isset($_POST['delbtn'])) {
     $postd = $_POST['delbtn'];
-    $hue = $odb -> query("DELETE FROM `services` WHERE ID = '".$postd."' ");
+    $hue = $odb -> query("UPDATE `services` SET closed = 1 WHERE ID = '".$postd."'");
     echo '<div class="alert alert-success">Post has been deleted</div> ';
 }
 
