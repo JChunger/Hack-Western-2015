@@ -53,7 +53,7 @@
                     <div class="section-2">
                         <h1>About BitFor.me</h1>
                         <br>
-                        <img src="img/BitForMe-600.png">
+                        <img src="svg/BitForMe.svg">
                         <br>
                         <br>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, tortor in venenatis viverra, nunc libero venenatis nisl, ut mollis felis augue sed lectus. Maecenas nec ultricies nisl. Sed non lectus in sapien feugiat porta et eu velit. Sed malesuada non quam in fermentum. </p>
