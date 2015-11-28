@@ -9,12 +9,19 @@ $transaction_hash = $_GET['transaction_hash'];
 
 if ($secret == $real_secret) {
 	$depin = $odb -> prepare("INSERT INTO `deposites` VALUES(NULL, :tid, :amount, :uid)");
-    $depin ->
+    $depin -> execute(array(":tid" => $transaction_hash, ":amount" => $btcPaid, ":uid" => $userid));
 	
+    $meow = $odb -> query("SELECT `balance` FROM `users` WHERE ID = $userid");
+    $meow = $meow -> fetchColumn(0);
+    $newb = $meow+$btcPaid;
+    
+    $killt = $odb -> prepare("UPDATE `users` SET `balance` = :illin WHERE ID = :id ");
+    $killt -> execute(array(":illin" => $newb, ":id" => $userid));
+    
 	echo "*ok*";
 //} else {
 //	die();
-//}
+//},
 } else { 
     die();
     
