@@ -20,7 +20,7 @@
 	          <a href="login.php">Log In</a>
 	        </li>
 	        <li>
-	          <a href="#">Sign Up</a>
+	          <a href="indexsign.php">Sign Up</a>
 	        </li>
               <?php } else {?>
                   <li>

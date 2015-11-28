@@ -110,7 +110,7 @@ if (isset($_POST['logbtn'])) {
                              </span>
                             <br>
                             <br>
-                            <a class="logsign" href="indexsign">Don't have an account? Click here!</a>
+                            <a class="logsign" href="indexsign.php">Don't have an account? Click here!</a>
                             </form>
                         </div>
                     </div>
