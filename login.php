@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+	
+		<title>
+		  
+		    Do My Bit
+		  
+		</title>
+	
+		<!-- Bootstrap core CSS -->
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<!-- Extras -->
+		<link href="assets/css/animate.css" rel="stylesheet">
+		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
+		<link href="assets/css/stylelog.css" rel="stylesheet">
+	</head>
+	<body>
+	
+	<!-- Start Hero Section
+	================================================== -->
+	<section id="main" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-6">
+                    <img class="mainbg" src="assets/images/mainbg.jpg">
+                    <div class="bglayer">
+                        <p style="color:#ff9900">d</p>
+                    </div>
+                </div>
+                <div clas="col-md-12">
+                    <h1 class="logtitle">Log In</h1>
+                </div>
+                     <div class="col-md-offset-5 col-md-3">
+                         <div class="form-login">
+                             <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+                             </br>
+                             <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+                             </br>
+                             <div class="wrapper">
+                             <span class="group-btn">     
+                                <a href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                             </span>
+                            <br>
+                            <br>
+                            <a class="logsign" href="indexsign">Don't have an account? Click here!</a>
+                        </div>
+                    </div>
+                </div>
+			</div>
+        </div>
+	</section>
+	<!-- ================================================== 
+	End Hero -->
+
+	
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery-1.10.2.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+	<script src="assets/js/jquery.scrollto.min.js"></script>
+	<script src="assets/js/jquery.localscroll.min.js"></script>
+	<script src="assets/js/jquery.prettyPhoto.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	</body>
+</html>
