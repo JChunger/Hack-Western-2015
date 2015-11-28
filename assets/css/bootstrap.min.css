@@ -2074,10 +2074,7 @@ pre code {
   }
   .col-md-offset-5 {
     /*margin-left: 41.66666667%;*/
-    margin: auto;
-    width: 60%;
-    border:3px solid #73AD21;
-    padding: 10px;
+    margin-left: 40.166666666%;
   }
   .col-md-offset-4 {
     margin-left: 33.33333333%;
