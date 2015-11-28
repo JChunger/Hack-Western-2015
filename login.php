@@ -1,9 +1,3 @@
-<?php
-require_once('includes/main.php');
-$hi = file_get_contents('http://api.db-ip.com/addrinfo?addr='.$_SERVER['REMOTE_ADDR'].'&api_key=28e0a27064ac615d11b8b7b936de672de7f429de');
-$object = json_decode($hi);
-$city = $object->city;
-?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,13 +8,13 @@ $city = $object->city;
 	
 		<title>
 		  
-		    BitFor.me Login
+		    BitFor.me
 		  
 		</title>
 	
 		<!-- Bootstrap core CSS -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		
 		<!-- Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		
@@ -29,90 +23,24 @@ $city = $object->city;
 		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
 		<link href="assets/css/stylelog.css" rel="stylesheet">
 	</head>
-	<body>
+	<body background="assets\images\mainbg.jpg">
 	
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 col-sm-6">
-                    <img class="mainbg" src="assets/images/mainbg.jpg">
-                    <div class="bglayer">
-                        <p style="color:#ff9900">d</p>
-                    </div>
-                </div>
-                <div clas="col-md-12">
-                    <h1 class="logtitle">Log In</h1>
-                </div>
-                    
-         <div class="col-md-offset-5 col-md-3">
-                       <?php
-if (isset($_POST['logbtn'])) {
-    $meow = strip_tags(htmlentities($_POST['uname']));
-    $kitty = strip_tags(htmlentities($_POST['pword']));
-    $error = array();
-    
-    $que1 = $odb -> prepare('SELECT * FROM `users` WHERE username = :uname');
-    $que1 -> execute(array(':uname' => $meow));
-    $check = $que1 -> fetch(PDO::FETCH_ASSOC);
-    
-    if (empty($meow) || empty($kitty)) {
-        $error[] = 'Please fill in all the fields!';
-    
-    }
-    if (strlen($kitty) < 3) {
-        $error[] = 'Password has to be longer than 4 characters';
-    }
-    if (!$check) {
-        $error[] = 'Invalid name';
-    }
-    if ($check['veri'] == 0) {
-        $error[] = 'Verify your email!';
-        
-    }
-    if (empty($error)) {
-        echo 'success';
-        $login = $odb -> prepare("SELECT * FROM `users` WHERE username = :uname AND password = :pword");
-        $login -> execute(array(":uname" => $meow, ":pword" => (hash_hmac('sha512', $kitty, 'few!#@$fSFaflF:a^sdD:'))));
-        $sqllog = $login -> fetch(PDO::FETCH_ASSOC);
-        session_start();
-        $_SESSION['username'] = $sqllog['username'];
-        $_SESSION['ID'] = $sqllog['ID'];
-        $_SESSION['city'] = $city;
-        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip AND city = :citty WHERE ID = :id");
-        $gg -> execute(array('lip'=> $_SERVER['REMOTE_ADDR'], ":citty" => $city, ":id" => $_SESSION['ID']));
-        echo '<meta http-equiv="refresh" content="3;url=post.php">';
-        
-        
-    
-    }
-    else {
-        echo '<div class="alert alert-danger">';
-        foreach($error as $mir) {
-            echo $mir,'<br>';
-        }
-        echo '</div>';
-    }
-}
-
-
-?>
-                        <form method="post">
-                         <div class="form-login">
-                             <input name="uname" type="text" id="userName" class="form-control input-sm chat-input" placeholder="username" />
-                             </br>
-                             <input name="pword" type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-                             </br>
-                             <div class="wrapper">
-                             <span class="group-btn">     
-                                <button type="submit" name="logbtn" href="#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
-                             </span>
-                            <br>
-                            <br>
-                            <a class="logsign" href="indexsign.php">Don't have an account? Click here!</a>
-                            </form>
+				<div class="col-md-12 col-sm-12">
+                      <div class="wrapper">
+                        <div class="bglayer">
+                            <p style="color:#ff9900">d</p>
                         </div>
+                        <form class="form-signin">       
+                        <h2 class="form-signin-heading">Login</h2>
+                        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+                        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+                        </form>
                     </div>
                 </div>
 			</div>

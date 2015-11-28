@@ -8,7 +8,7 @@
 	
 		<title>
 		  
-		    BitFor.Me - Easy Tasks, Easy Money
+		    BitFor.me
 		  
 		</title>
 	
@@ -23,25 +23,53 @@
 		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
 		<link href="assets/css/stylehome.css" rel="stylesheet">
 	</head>
-	<body>
+	<body background="assets\images\mainbg.jpg">
 	
-	<?php include('nav.php') ?>
+	<!-- Start Header
+	================================================== -->
+	<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <!-- Your Logo -->
+	      <a href="" class="navbar-brand"><img class="logo1" src="assets/images/BitForMe-72.png"></a>
+	    </div>
+	    <!-- Start Navigation -->
+	    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	      <ul class="nav navbar-nav">
+	        <li>
+	          <a href="indexLog.html">Log In</a>
+	        </li>
+	        <li>
+	          <a href="indexsign.html">Sign Up</a>
+	        </li>
+	      </ul>
+	    </nav>
+	  </div>
+	</header>
+	<!-- ==================================================
+	End Header -->
 	
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 col-sm-6">
+				<div class="col-md-12 col-sm-12">
                     <img class="mainbg" src="assets/images/mainbg.jpg">
                     <div class="bglayer">
                         <p style="color:#ff9900">d</p>
                     </div>
                 </div>
-                <div clas="col-md-8">
-                    <h1 class="maintitle">Do a <span>Bit</span> for someone, <br>Get some coins.</h1>
+                <div clas="col-md-8 col-sm-12">
+                    <h1 class="maintitle">Do a <span>Bit</span> for someone, <br>get some coins</h1>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <img class="maingraphic" src="assets/images/opengraph.png"
                 </div>
 			</div>
@@ -63,3 +91,4 @@
 	<script src="assets/js/scripts.js"></script>
 	</body>
 </html>
+

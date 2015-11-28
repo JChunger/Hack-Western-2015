@@ -197,87 +197,63 @@ h6 {font-size: 16px;}
 .header-button {
 	margin-left: 15px;
 }
-.navbar-inverse .navbar-toggle {
-	background-color: #34495e;
-	border-color: #2c3e50;
-	margin-top: 23px;
-}
-.navbar-inverse .navbar-toggle:focus {
-	outline: none;
+@media screen and (max-width: 992px) {
+    .section-2 {display: none;}
 }
 
 /*	Hero
 	==================================================*/
 .mainbg {
-    width: 144spx;
+    background-size: cover;
     margin-left: -150px;
     margin-top: -200px;
     position: absolute;
     z-index: -100;
 }
 .bglayer {
-    background: #ff9900;
-    opacity: 0.75;
-    margin-left: 265px;
-    max-width: 600px;
+    background-color: black;
+    opacity: 0.60;
+    max-width: 3000px;
     width: 100%;
-    height: 450px;
+    height: 650px;
     position: absolute;
-    z-index: -1;
-    margin-top: 75px;
+    z-index: -2;
+    margin-left: -130px;
 }
-.logtitle {
-    color: white;
+.form-signin-heading2 {
     text-align: center;
-    padding: 50px;
-    margin-top: 90px;
-    z-index: 1000;
-    font-size: 4em;
-    margin-right: 10px;
-}
-.form-login {
-    margin-left: -100px;
-    postition: absolute;
-}
-#userName {
-    height: 45px;
-    width:  450px;
-    margin-left: -46px;
-    position: absolute;
-}
-#userPassword {
-    margin-top: 30px;
-    margin-left: -46px;
-    height: 45px;
-    width:  450px;
-    dislay: block
-    position: absolute;
-}
-.group-btn {
-    margin-left: 144px;
-    padding: 5px;
-    position: absolute;
-}
-.logsign {
-    margin-left: 57px;
+    font-size: 55px;
     color: white;
-    position: absolute;
+    padding-top: 65px;
+    padding-bottom: 30px;
 }
-@media screen and (max-width: 1200px) {
-    .bglayer {margin-left: 185px;}
+.form-control {
+    margin-bottom: 25px;
+    height: 55px;
+    width: 75%;
+    margin-left: 63px;
 }
-@media screen and (max-width: 992px) {
-    .bglayer {
-        width: 650px;
-        margin-left: 55px;
-    }
-    .userName, .userPassword{
-        margin-left: -760px;
-    }
+.btn {
+    width: 120px;
+    height: 65px;
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 205px;
 }
-
-
-
+.section-2 {
+    color: white;
+}
+.section-2 h1 {
+    color: white;
+    padding-top: 40px;
+    font-size: 50px;
+    text-align: center;
+}
+.section-2 p {
+    font-size: 1.1em;
+    line-height: 40px;
+    text-align: center;
+}
 /*	Responsive
 	==================================================*/ 
 
