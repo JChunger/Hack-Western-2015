@@ -8,7 +8,7 @@
 	
 		<title>
 		  
-		    Sign Up
+		    BitFor.me - Sign Up
 		  
 		</title>
 	

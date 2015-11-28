@@ -8,7 +8,11 @@
 	
 		<title>
 		  
+<<<<<<< HEAD
 		    BitFor.me
+=======
+		    BitFor.me - Easy Tasks, Easy Money
+>>>>>>> origin/master
 		  
 		</title>
 	
@@ -66,8 +70,13 @@
                         <p style="color:#ff9900">d</p>
                     </div>
                 </div>
+<<<<<<< HEAD
                 <div clas="col-md-8 col-sm-12">
                     <h1 class="maintitle">Do a <span>Bit</span> for someone, <br>get some coins</h1>
+=======
+                <div clas="col-md-8">
+                    <h1 class="maintitle">Do A <span>Bit</span> For Someone, <br>Get some coins</h1>
+>>>>>>> origin/master
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <img class="maingraphic" src="assets/images/opengraph.png"
