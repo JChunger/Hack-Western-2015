@@ -42,13 +42,13 @@
                         <form class="form-signin">
                         <h2 class="form-signin-heading2">Sign up</h2>
                         <label for="inputnewUsername" class="sr-only">Email address</label>
-                        <input type="password" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+                        <input type="newuser" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
                         <label for="inputnewPassword" class="sr-only">Password</label>
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <label for="inputconfirml" class="sr-only">Email address</label>
                         <input type="confirm" id="inputEmail" class="form-control" placeholder="Password Confirmation" required autofocus>
                         <label for="inputnewemail" class="sr-only">Password</label>
-                        <input type="newemail" id="inputPassword" class="form-control" placeholder="Email" required>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Email" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                         </form>
                     </div>
