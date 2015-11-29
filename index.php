@@ -38,7 +38,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
-                    <img class="mainbg" src="assets/images/mainbg.jpg">
+                    <img class="mainbg" src="/assets/images/mainbg.jpg">
                     <div class="bglayer">
                         <p style="color:#ff9900">d</p>
                     </div>
