@@ -64,8 +64,8 @@ if (!isset($_SESSION['username'])) {
                                 if (empty($meowz)) {
                                     $irt = $odb -> prepare('UPDATE `users` SET `balance` = :bal WHERE ID = :id');
                                     $irt -> execute(array(':bal' => $tree - $valit , ':id' => $_SESSION['ID']));
-                                    $iho = file_get_contents('https://blockchain.info/merchant/2ac750d7-1a93-47cb-b6af-986d3497d7c8/payment?password=Yoloswag123@&to='.$addyb.'&amount='.$valit.'');
-                                    echo '<div class="alert alert-success"> Deposite was successful</div>';
+                                    $iho = file_get_contents('https://blockchain.info/merchant/@identifier/payment?password=**************&to='.$addyb.'&amount='.$valit.'');
+                                    echo '<div class="alert alert-success"> Deposit was successful</div>';
                                     
                                 }
                                 else {
