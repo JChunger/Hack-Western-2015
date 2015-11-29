@@ -10,7 +10,7 @@ $btccurrency = file_get_contents('https://blockchain.info/tobtc?currency=CAD&val
 	$response = file_get_contents($root_url.'?'.$parameters);
 	$object = json_decode($response);
 	$sendto = $object->input_address;
-	echo "<p>Please send <u>$btcamount</u> BTC to <u>$sendto</u><br />If you do not recieve your balance after 4 confirmations please email us at admin@bitfor.me!</p><br>"
+	echo "<p>Please send <u>$btcamount</u> BTC to <u>$sendto</u><br />If you do not recieve your balance after 4 confirmations please email us at admin@bitfor.me!</p><br>";
 	echo "<img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='$sendto";
         
         ?>
