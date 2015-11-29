@@ -42,7 +42,8 @@
                     </div>
                 </div>
                 <div clas="col-md-8 col-sm-12">
-                    <h1 class="maintitle">Do a <span>Bit</span><br /> <b style="color: transparent;">hehe</b>for some <span>Coins</span>
+                    <h1 class="maintitle">Do a <span>Bit</span></h1>
+                    <h1 class="undertitle">for some <span>Coins</span>
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <img class="maingraphic" src="assets/images/opengraph.png"
