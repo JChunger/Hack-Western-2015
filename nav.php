@@ -35,13 +35,11 @@
                   <a href="find.php">Find</a>
                 </li>
                 <li>
-                  <a href="inbox.php">Inbox <span class="badge"><?php $gti = $odb -> query("SELECT COUNT(*) FROM `inbox` WHERE `from_id` = '".$_SESSION['ID']."' OR `to_id` = '".$_SESSION['ID']."' AND status <2"); echo $gti -> fetchColumn(0); ?></span></a>
+                  <a href="inbox.php">Inbox <span class="label label-primary"><b><?php $gti = $odb -> query("SELECT COUNT(*) FROM `inbox` WHERE `from_id` = '".$_SESSION['ID']."' AND status < 2"); $gti = $gti -> fetchColumn(0); $gti2 = $odb -> query("SELECT COUNT(*) FROM `inbox` WHERE `to_id` = '".$_SESSION['ID']."' AND status < 2"); $gti2 = $gti2 -> fetchColumn(0); echo intval($gti )+ intval($gti2);?></b></span></a>
                 </li>
+                
                 <li>
-                  <a href="logout.php">Logout</a>
-                </li>
-                <li>
-                    <a href="deposite.php">Deposite</a>
+                    <a href="deposit.php">Deposit</a>
                 </li>
                 <li>
                     <a href="withdraw.php">Withdraw</a>
@@ -49,6 +47,9 @@
                 <li>
                     <a >Balance: <?php $ighh = $tree/100000000; print number_format($ighh, 8);
 ; ?> BTC</a>
+                </li>
+                <li>
+                  <a href="logout.php">Logout</a>
                 </li>
               
               <?php } ?>

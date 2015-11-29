@@ -39,7 +39,7 @@ $btcval = file_get_contents('https://api.bitcoinaverage.com/ticker/CAD/last');
 	
 	<!-- Start Hero Section
 	================================================== -->
-	<div style="margin-top: 10%;" class="container">
+	<div style="margin-top: 115px;" class="container">
 	    <div class="row">
               <div>
 
@@ -53,7 +53,7 @@ $btcval = file_get_contents('https://api.bitcoinaverage.com/ticker/CAD/last');
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active" id="rec">
        <div style="margin-top:1%;" class="container">
-        
+        <div class="table-responsive">
         <table class="table table-striped table-bordered">
                        
         <thead>
@@ -79,6 +79,7 @@ $btcval = file_get_contents('https://api.bitcoinaverage.com/ticker/CAD/last');
         </tbody>
 								
             </table>
+           </div>
         <p>* To get the money, the other users has to confirm delievery. This should be done while face to face! </p>
         </div>
     </div>
@@ -118,6 +119,7 @@ if(isset($_POST['rsub'])) {
 }
 
 ?>
+       <div class="table-responsive">
         <table class="table table-striped table-bordered">
                        
         <thead>
@@ -152,6 +154,7 @@ if(isset($_POST['rsub'])) {
         </tbody>
 								
             </table>
+         </div>
         <p>* To get the money, the other users has to confirm delievery. This should be done while face to face! </p>
         </div>
     </div>

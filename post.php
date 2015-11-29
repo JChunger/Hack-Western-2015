@@ -111,6 +111,7 @@ if (!isset($_SESSION['username'])) {
                           <section class="panel">
                         
                         <div class="panel-body">
+                           <div class="table-responsive">
                             <table class="table table-striped table-bordered">
                                <?php 
 if (isset($_POST['delbtn'])) {
@@ -146,7 +147,7 @@ if (isset($_POST['delbtn'])) {
                                 </tbody>
                 
             </table>
-
+                            </div>
       </div
 
                               </div>

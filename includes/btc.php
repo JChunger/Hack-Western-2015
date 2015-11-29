@@ -8,7 +8,7 @@ $transaction_hash = $_GET['transaction_hash'];
 
 
 if ($secret == $real_secret) {
-	$depin = $odb -> prepare("INSERT INTO `deposites` VALUES(NULL, :tid, :amount, :uid)");
+	$depin = $odb -> prepare("INSERT INTO `deposites` VALUES(NULL, :tid, :amount, :uid, UNIX_TIMESTAMP())");
     $depin -> execute(array(":tid" => $transaction_hash, ":amount" => $btcPaid, ":uid" => $userid));
 	
     $meow = $odb -> query("SELECT `balance` FROM `users` WHERE ID = $userid");

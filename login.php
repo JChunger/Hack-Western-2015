@@ -3,6 +3,10 @@ require_once('includes/main.php');
 $hi = file_get_contents('http://api.db-ip.com/addrinfo?addr='.$_SERVER['REMOTE_ADDR'].'&api_key=28e0a27064ac615d11b8b7b936de672de7f429de');
 $object = json_decode($hi);
 $city = $object->city;
+session_start();
+if (isset($_SESSION['username'])) {
+ header('location: post.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +74,6 @@ if (isset($_POST['logbtn'])) {
         $login = $odb -> prepare("SELECT * FROM `users` WHERE username = :uname AND password = :pword");
         $login -> execute(array(":uname" => $meow, ":pword" => (hash_hmac('sha512', $kitty, 'few!#@$fSFaflF:a^sdD:'))));
         $sqllog = $login -> fetch(PDO::FETCH_ASSOC);
-        session_start();
         $_SESSION['username'] = $sqllog['username'];
         $_SESSION['ID'] = $sqllog['ID'];
         $_SESSION['city'] = $city;

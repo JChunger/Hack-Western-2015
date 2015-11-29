@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
 	require_once('includes/main.php');
+session_start();
+if (isset($_SESSION['username'])) {
+ header('location: post.php');
+}
 ?>
 <html lang="en">
 	<head>
@@ -46,9 +50,9 @@
 				
 				$resultQuery = $odb -> query("SELECT ID FROM users WHERE email = '" . $_POST['email'] . "'");
 				$uid = $resultQuery -> fetchColumn(0);
-
+                echo '<div class="alert alert-success"> Verification Email Has been sent. Loading...</div>'
 				?>
-				<meta http-equiv="refresh" content="1;email-verif.php?uid=<?php echo($uid); ?>&email=<?php echo($_POST['email']); ?>" > <?php
+				<meta http-equiv="refresh" content="2;email-verif.php?uid=<?php echo($uid); ?>&email=<?php echo($_POST['email']); ?>" > <?php
 			}
 		}
 	?>
@@ -74,6 +78,7 @@
                     		<label text="username" class="sr-only">Username</label>
                     		<input type="text" name="username" class="form-control" placeholder="Username" required>
                     		<button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    		<center style="margin-top:5px;"><a class="logsign" href="login.php">Already Have an Account? Sign in.</a></center>
                     	</form>
                     </div>
                 </div>
