@@ -29,7 +29,7 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
-		if(empty($_POST['email']) {
+		if(empty($_POST['email'])) {
 			?><h1>Please enter your email.</h1><?php
 		} elseif (empty($_POST['password'])) {
 			?><h1>Please enter a password.</h1><?php
