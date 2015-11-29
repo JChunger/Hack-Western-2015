@@ -29,6 +29,8 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
+		$sql = $odb -> prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
+		$sql -> execute(array(':username' => $_POST['username'], ':password' => hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'), ':email' => $_POST['email']));
 		if(isset($_POST['btn'])){
 			echo("success");
 			if(empty($_POST['email'])) {
@@ -42,7 +44,8 @@
 			} elseif ($_POST['password'] != $_POST['passwordConfirm']) {
 				?><h1>Passwords do not match - please try again.</h1><?php
 			} else {
-				$sql = $odb -> prepare("INSERT INTO user (username, password, email) VALUES (:username, :password, :email)");
+				echo($_POST['username'] . " " . $_POST['Password'] . " " . $_POST['email']);
+				$sql = $odb -> prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
 				$sql -> execute(array(':username' => $_POST['username'], ':password' => hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'), ':email' => $_POST['email']));
 				
 				$resultQuery = $odb -> query("SELECT ID FROM users WHERE email = '" . $_POST['email'] . "'");
