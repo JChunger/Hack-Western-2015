@@ -1,5 +1,5 @@
 <?php
-	require_once 'db.php';
+	require_once 'includes/db.php';
 	
 	$key = htmlspecialchars($_GET["key"]);
 	$email = htmlspecialchars($_GET["email"]);

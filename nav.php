@@ -23,8 +23,8 @@
 	          <a href="register.php">Sign Up</a>
 	        </li>
               <?php } else {
-$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
-$tree = $check1 -> fetchColumn(0);
+				$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
+				$tree = $check1 -> fetchColumn(0);
               
               
               ?>

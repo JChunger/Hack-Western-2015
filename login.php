@@ -1,3 +1,9 @@
+<?php
+require_once('includes/main.php');
+$hi = file_get_contents('http://api.db-ip.com/addrinfo?addr='.$_SERVER['REMOTE_ADDR'].'&api_key=28e0a27064ac615d11b8b7b936de672de7f429de');
+$object = json_decode($hi);
+$city = $object->city;
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -87,13 +93,13 @@ if (isset($_POST['logbtn'])) {
                         <div class="bglayer">
                             <p style="color:#ff9900">d</p>
                         </div>
-                        <form class="form-signin">       
-                        <h2 class="form-signin-heading">Login</h2>
-                        <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-                        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                        <br>
-                        <a class="logsign" href="register.php">Don't have an account? Sign up here!</a>
+                        <form class="form-signin" method="POST">       
+                            <h2 class="form-signin-heading">Login</h2>
+                            <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+                            <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                            <br>
+                            <a class="logsign" href="register.php">Don't have an account? Sign up here!</a>
                         </form>
                     </div>
                 </div>

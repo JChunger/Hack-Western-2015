@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+	require_once('includes/main.php');
+?>
 <html lang="en">
 	<head>
         <meta charset="utf-8">
@@ -25,10 +28,27 @@
 	</head>
 	<body background="assets\images\mainbg.jpg">
 	
-	<?php
-		// if($_POST['']){
+	<?php //MAKE THIS LOOK LIKE AN ERROR
+		if(empty($_POST['email']) {
+			?><h1>Please enter your email.</h1><?php
+		} elseif (empty($_POST['password'])) {
+			?><h1>Please enter a password.</h1><?php
+		} elseif (empty($_POST['passwordConfirm'])) {
+			?><h1>Please confirm your password.</h1><?php
+		} elseif (empty($_POST['username']))) {
+			?><h1>Please enter a username.</h1><?php
+		} elseif ($_POST['password'] != $_POST['passwordConfirm']) {
+			?><h1>Passwords do not match - please try again.</h1><?php
+		} else {
+			$sql = $odb -> prepare("INSERT INTO user (username, password, email) VALUES (:username, :password, :email)");
+			$sql = execute(array(':username' => $_POST['username'], ':password' => $_POST[hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'))], ':email' => $_POST['email']));
+			
+			$resultQuery = $odb -> query("SELECT uid FROM users WHERE email = '" . $_POST['email'] . "'");
+			$uid = $resultQuery -> fetchColumn(0);
 
-		// }
+			?>
+			<meta http-equiv="Location" content="email-verif.php?uid=<?php echo($id); ?>&email=<?php echo($email); ?>" > <?php
+		}
 	?>
 
 	<!-- Start Hero Section
@@ -41,9 +61,9 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="section-1">
-                    	<form class="form-signin">
+                    	<form class="form-signin" method="POST">
                     		<h2 class="form-signin-heading2">Sign up</h2>
-                    		<label for="username" class="sr-only">Email address</label>
+                    		<label for="email" class="sr-only">Email address</label>
                     		<input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
                     		<label for="password" class="sr-only">Passwords</label>
                     		<input type="password" id="password" class="form-control" placeholder="Password" required>
@@ -62,7 +82,7 @@
                         <img src="svg/BitForMe.svg">
                         <br>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, tortor in venenatis viverra, nunc libero venenatis nisl, ut mollis felis augue sed lectus. Maecenas nec ultricies nisl. Sed non lectus in sapien feugiat porta et eu velit. Sed malesuada non quam in fermentum. </p>
+                        <p>BitFor.me is designed as a tool to help people accomplish what they want to more easily and without distractions. It allows people to help out others.</p>
                     </div>
                 </div>  
             </div>
