@@ -1,9 +1,3 @@
-<?php
-	require_once 'includes/db.php';
-	$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
-	$tree = $check1 -> fetchColumn(0);
-?>
-
 <!-- Start Header
 	================================================== -->
 	<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">
@@ -29,10 +23,8 @@
 	          <a href="register.php">Sign Up</a>
 	        </li>
               <?php } else {
-
 $check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
 $tree = $check1 -> fetchColumn(0);
-
               
               
               ?>
