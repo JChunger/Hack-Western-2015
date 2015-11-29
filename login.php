@@ -92,7 +92,7 @@ if (isset($_POST['logbtn'])) {
                         <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
                         <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                        <a href="register.php">Don't have an account? Sign up here!</a>
+                        <a class="logsign" href="register.php">Don't have an account? Sign up here!</a>
                         </form>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
 	
 		<title>
 
-		    BitFor.me - Easy Tasks, Easy Money
+		    BitFor.me - A Peer-to-Peer Task Completion Platform
 		  
 		</title>
 	
