@@ -29,8 +29,6 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
-		$sql = $odb -> prepare("INSERT INTO users (username, password, email) VALUES (:username, :password, :email)");
-		$sql -> execute(array(':username' => $_POST['username'], ':password' => hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'), ':email' => $_POST['email']));
 		if(isset($_POST['btn'])){
 			echo("success");
 			if(empty($_POST['email'])) {
