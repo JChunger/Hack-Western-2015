@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12">
                     <img class="maingraphic" src="assets/images/opengraph.png">
-                    <img class="mainbg" src="assets/images/mainbg.jpg">
+                    <img class="mainbg" src="assets/images/opengraph.png">
                 </div>
 			</div>
         </div>
