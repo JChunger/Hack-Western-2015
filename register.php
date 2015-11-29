@@ -29,8 +29,7 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
-		if(!empty($_POST)){
-			echo("Success");
+		if(isset($_POST['btn'])){
 			if(empty($_POST['email'])) {
 				?><h1>Please enter your email.</h1><?php
 			} elseif (empty($_POST['password'])) {
@@ -74,7 +73,7 @@
                     		<input type="password" id="passwordConfirm" class="form-control" placeholder="Password Confirmation" required>
                     		<label text="username" class="sr-only">Username</label>
                     		<input type="text" id="username" class="form-control" placeholder="Username" required>
-                    		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    		<button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                     	</form>
                     </div>
                 </div>
