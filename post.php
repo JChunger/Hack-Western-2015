@@ -50,10 +50,13 @@ if (!isset($_SESSION['username'])) {
     $amount = intval($_POST['amount']*100000000);
     $krill = array();
     
+    $lim = $odb -> query("SELECT SUM(amount) FROM `services` WHERE uid = '".$_SESSION['ID']."' AND status < 2 AND closed = 0"); 
+    $lim = $lim -> fetchColumn(0);
+    
     if (empty($title) || empty($desc) || empty($address) || empty($amount)){
      $krill[] = 'Please Fill in all the Fields';
     }
-    if ($tree < $amount) {
+    if ($tree < $amount || $amount > ($tree - $lim)) {
      $krill[] = 'Insuficiant Funds';   
         
     }
