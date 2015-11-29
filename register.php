@@ -41,7 +41,7 @@
 			?><h1>Passwords do not match - please try again.</h1><?php
 		} else {
 			$sql = $odb -> prepare("INSERT INTO user (username, password, email) VALUES (:username, :password, :email)");
-			$sql = execute(array(':username' => $_POST['username'], ':password' => $_POST[hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'))], ':email' => $_POST['email']));
+			$sql = execute(array(':username' => $_POST['username'], ':password' => $_POST[hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:'))], ':email' => $_POST['email']);
 			
 			$resultQuery = $odb -> query("SELECT uid FROM users WHERE email = '" . $_POST['email'] . "'");
 			$uid = $resultQuery -> fetchColumn(0);
