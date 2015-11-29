@@ -26,9 +26,9 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php
-		if($_POST['']){
+		// if($_POST['']){
 
-		}
+		// }
 	?>
 
 	<!-- Start Hero Section
