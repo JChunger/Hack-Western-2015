@@ -30,6 +30,7 @@
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
 		if(isset($_POST['btn'])){
+			echo("success");
 			if(empty($_POST['email'])) {
 				?><h1>Please enter your email.</h1><?php
 			} elseif (empty($_POST['password'])) {
