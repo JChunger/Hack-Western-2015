@@ -67,13 +67,13 @@
                     	<form class="form-signin" method="POST">
                     		<h2 class="form-signin-heading2">Sign up</h2>
                     		<label for="email" class="sr-only">Email address</label>
-                    		<input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+                    		<input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
                     		<label for="password" class="sr-only">Passwords</label>
-                    		<input type="password" id="password" class="form-control" placeholder="Password" required>
+                    		<input type="password" name="password" class="form-control" placeholder="Password" required>
                     		<label for="passwordConfirm" class="sr-only">Confirm Password</label>
-                    		<input type="password" id="passwordConfirm" class="form-control" placeholder="Password Confirmation" required>
+                    		<input type="password" name="passwordConfirm" class="form-control" placeholder="Password Confirmation" required>
                     		<label text="username" class="sr-only">Username</label>
-                    		<input type="text" id="username" class="form-control" placeholder="Username" required>
+                    		<input type="text" name="username" class="form-control" placeholder="Username" required>
                     		<button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                     	</form>
                     </div>
