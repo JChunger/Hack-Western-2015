@@ -25,6 +25,10 @@
 	</head>
 	<body background="assets\images\mainbg.jpg">
 	
+	<?php
+
+	?>
+
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
@@ -40,10 +44,10 @@
                         <label for="inputnewUsername" class="sr-only">Email address</label>
                         <input type="newuser" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
                         <label for="inputnewPassword" class="sr-only">Password</label>
-                        <input type="newpassword" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <label for="inputconfirml" class="sr-only">Email address</label>
                         <input type="confirm" id="inputEmail" class="form-control" placeholder="Password Confirmation" required autofocus>
-                        <label for="inputnewemail" class="sr-only">Password</label>
+                        <label for="password" class="sr-only">Password</label>
                         <input type="newemail" id="inputPassword" class="form-control" placeholder="Email" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
                         </form>
