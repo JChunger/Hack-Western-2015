@@ -35,7 +35,6 @@
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
-        <img class="mainbg" src="assets/images/mainbg.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
