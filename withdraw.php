@@ -46,7 +46,7 @@ if (!isset($_SESSION['username'])) {
                        <form method="post">
                          <div class="col-lg-6">
                           <?php
-                            $lim = $odb -> query("SELECT SUM(amount) FROM `services` WHERE uid = '".$_SESSION['ID']."'"); 
+                            $lim = $odb -> query("SELECT SUM(amount) FROM `services` WHERE uid = '".$_SESSION['ID']."' AND status < 2 AND closed = 0"); 
                             $lim = $lim -> fetchColumn(0);
                             if (isset($_POST['with'])) {
                                 $valit = floatval($_POST['killag']*100000000);

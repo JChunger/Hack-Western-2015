@@ -30,7 +30,16 @@ $city = $object->city;
 		<link href="assets/css/stylelog.css" rel="stylesheet">
 	</head>
 	<body background="assets\images\mainbg.jpg">
-	
+	<section id="main" class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+                      <div class="wrapper">
+                        <div class="bglayer">
+                            <p style="color:#ff9900">d</p>
+                        </div>
+                        <form class="form-signin" method="POST">       
+                            <h2 class="form-signin-heading">Login</h2>
         <?php
 if (isset($_POST['logbtn'])) {
     $meow = strip_tags(htmlentities($_POST['uname']));
@@ -56,7 +65,7 @@ if (isset($_POST['logbtn'])) {
         
     }
     if (empty($error)) {
-        echo 'success';
+        
         $login = $odb -> prepare("SELECT * FROM `users` WHERE username = :uname AND password = :pword");
         $login -> execute(array(":uname" => $meow, ":pword" => (hash_hmac('sha512', $kitty, 'few!#@$fSFaflF:a^sdD:'))));
         $sqllog = $login -> fetch(PDO::FETCH_ASSOC);
@@ -64,9 +73,13 @@ if (isset($_POST['logbtn'])) {
         $_SESSION['username'] = $sqllog['username'];
         $_SESSION['ID'] = $sqllog['ID'];
         $_SESSION['city'] = $city;
-        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip AND city = :citty WHERE ID = :id");
-        $gg -> execute(array('lip'=> $_SERVER['REMOTE_ADDR'], ":citty" => $city, ":id" => $_SESSION['ID']));
-        echo '<meta http-equiv="refresh" content="3;url=post.php">';
+        
+        $gg = $odb -> prepare("UPDATE `users` SET last_ip = :lip WHERE ID = :id");
+        $gg -> execute(array(':lip'=> $_SERVER['REMOTE_ADDR'], ":id" => $_SESSION['ID']));
+        
+        $gg2 = $odb -> prepare("UPDATE `users` SET city = :city WHERE ID = :id");
+        $gg2 -> execute(array(':city'=> $city, ":id" => $_SESSION['ID']));
+        echo '<div class="alert alert-success">success</div><meta http-equiv="refresh" content="3;url=post.php">';
         
         
     
@@ -85,22 +98,16 @@ if (isset($_POST['logbtn'])) {
     
 	<!-- Start Hero Section
 	================================================== -->
-	<section id="main" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-sm-12">
-                      <div class="wrapper">
-                        <div class="bglayer">
-                            <p style="color:#ff9900">d</p>
-                        </div>
-                        <form class="form-signin" method="POST">       
-                            <h2 class="form-signin-heading">Login</h2>
-                            <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-                            <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+	
+                        
+                            <input type="text" class="form-control" name="uname" placeholder="Username" required="" autofocus="" />
+                            <input type="password" class="form-control" name="pword" placeholder="Password" required=""/>      
+                            <button name="logbtn" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                             <br>
                             <a class="logsign" href="register.php">Don't have an account? Sign up here!</a>
+                            
                         </form>
+                        
                     </div>
                 </div>
 			</div>

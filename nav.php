@@ -35,7 +35,7 @@
                   <a href="find.php">Find</a>
                 </li>
                 <li>
-                  <a href="inbox.php">Inbox</a>
+                  <a href="inbox.php">Inbox <span class="badge"><?php $gti = $odb -> query("SELECT COUNT(*) FROM `inbox` WHERE `from_id` = '".$_SESSION['ID']."' OR `to_id` = '".$_SESSION['ID']."' AND status <2"); echo $gti -> fetchColumn(0); ?></span></a>
                 </li>
                 <li>
                   <a href="logout.php">Logout</a>

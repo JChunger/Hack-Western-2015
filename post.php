@@ -138,15 +138,13 @@ if (isset($_POST['delbtn'])) {
                                 </tbody>
                 
             </table>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       </div
-=======
+
                               </div>
->>>>>>> dan
-=======
+
                               </div>
->>>>>>> dan
+
         </section>
         
   </div>

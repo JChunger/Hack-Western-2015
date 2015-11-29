@@ -65,13 +65,13 @@ $btcval = file_get_contents('https://api.bitcoinaverage.com/ticker/CAD/last');
         </thead>
         <tbody>
         <?PHP
-        $ez = $odb -> query("SELECT * FROM `inbox` WHERE `from_id` = '".$_SESSION['ID']."' AND `status` < 3");
+        $ez = $odb -> query("SELECT * FROM `inbox` WHERE `from_id` = '".$_SESSION['ID']."' AND `status` < 4 ORDER BY `date` DESC");
         while ($mme = $ez -> fetch(PDO::FETCH_ASSOC)) {
         ?>
         <tr>
             <td><?php  echo $mme['ID']; ?></td>
             <td><?php  echo $mme['message']; ?></td>
-            <td><?php  if ($mme['status'] == 0) {echo '<p class="btn btn-warning">Not Accepted </p>';} else if ($mme['status'] == 1){ echo '<p class="btn btn-primary">Accepted </p>'; }else if ($mme['status'] == 2){ echo '<p class="btn btn-success">Payment Confirmed.</p>'; } ?></td>
+            <td><?php  if ($mme['status'] == 0) {echo '<p class="btn btn-warning">Not Accepted </p>';} else if ($mme['status'] == 1){ echo '<p class="btn btn-primary">Accepted </p>'; }else if ($mme['status'] == 2){ echo '<p class="btn btn-success">Payment Confirmed.</p>'; }else if ($mme['status'] == 3){ echo '<p class="btn btn-danger">Denied.</p>'; } ?></td>
             <td><?php echo date('d-m-Y', $mme['date']); ?></td>
         </tr>
             <?php } ?>
@@ -107,6 +107,7 @@ if(isset($_POST['rsub'])) {
         $ur2 = $ur2 -> fetchColumn(0);
         $njb2 = $ur2 + $joe1['amount'];
         
+        $close = $odb -> query("UPDATE `services` SET `closed` = 1 WHERE ID = '".$joe1['serv_id']."'");
         $urt = $odb -> query("UPDATE `users` SET `balance` = '".$njb2."' WHERE ID = '".$joe1['from_id']."'");
         echo '<div class="alert alert-success"> Balance Transfer Comfirmed!</div>'; 
        
@@ -130,7 +131,7 @@ if(isset($_POST['rsub'])) {
         </thead>
         <tbody>
         <?PHP
-        $ez1 = $odb -> query("SELECT * FROM `inbox` WHERE `to_id` = '".$_SESSION['ID']."' AND `status` < 3");
+        $ez1 = $odb -> query("SELECT * FROM `inbox` WHERE `to_id` = '".$_SESSION['ID']."' AND `status` < 3 ORDER BY `date` DESC");
         while ($mme1 = $ez1 -> fetch(PDO::FETCH_ASSOC)) {
         ?>
         <tr>
@@ -139,7 +140,7 @@ if(isset($_POST['rsub'])) {
             <td><?php echo date('d-m-Y', $mme1['date']); ?></td>
             <td><?php  if ($mme1['status'] == 0) {echo '<p class="btn btn-warning">Not Accepted </p>';} else if ($mme1['status'] == 1){ echo '<p class="btn btn-primary">Accepted </p>'; }else if ($mme1['status'] == 2){ echo '<p class="btn btn-success">Payment Confirmed.</p>'; } ?></td>
             <?php if($mme1['status'] !=2) { ?>
-            <form method="post"><td><select  class="btn btn-default dropdown-toggle" name="val<?php echo $mme1['ID']; ?>" id=""><option value="1">Accept</option><option value="2">Confirm Delievery</option></select></td>
+            <form method="post"><td><select  class="btn btn-default dropdown-toggle" name="val<?php echo $mme1['ID']; ?>" id=""><option value="1">Accept</option><option value="2">Confirm Delievery</option><option value="3">Deny</option></select></td>
             <td><button value="<?php echo $mme1['ID']; ?>" name="rsub" type="submit" class="btn btn-primary">Submit!</button></td></form>
             <?php  } else {?>
             <td>Done.</td>
