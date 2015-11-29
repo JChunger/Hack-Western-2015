@@ -65,7 +65,7 @@ if (isset($_SESSION['username'])) {
                 <div class="bglayer">
                     <p style="color:transparent">d</p>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-6">
                     <div class="section-1">
                     	<form class="form-signin" method="POST">
                     		<h2 class="form-signin-heading2">Sign up</h2>
@@ -82,7 +82,7 @@ if (isset($_SESSION['username'])) {
                     	</form>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-6">
                     <div class="section-2">
                         <h1>About BitFor.me</h1>
                         <br>
