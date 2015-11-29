@@ -35,7 +35,7 @@
 			?><h1>Please enter a password.</h1><?php
 		} elseif (empty($_POST['passwordConfirm'])) {
 			?><h1>Please confirm your password.</h1><?php
-		} elseif (empty($_POST['username']))) {
+		} elseif (empty($_POST['username'])) {
 			?><h1>Please enter a username.</h1><?php
 		} elseif ($_POST['password'] != $_POST['passwordConfirm']) {
 			?><h1>Passwords do not match - please try again.</h1><?php
