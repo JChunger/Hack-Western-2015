@@ -53,13 +53,21 @@ if (!isset($_SESSION['username'])) {
     if (empty($title) || empty($desc) || empty($address) || empty($amount)){
      $krill[] = 'Please Fill in all the Fields';
     }
-    if ($tree > $amount && empty($krill)) {
+    if ($tree < $amount) {
+     $krill[] = 'Insuficiant Funds';   
+        
+    }
+    if (empty($krill)) {
     $killa = $odb->prepare("INSERT INTO `services` VALUES(NULL, :uid, :title, :desc, :addy, :amount, 0, 0, :city, UNIX_TIMESTAMP())");
     $killa -> execute(array(':uid' => $_SESSION['ID'], ':title' => $title, ':desc' => $desc, ':addy' => $address, ':amount' => $amount, ':city' => $_SESSION['city']));
     echo '<div class="alert alert-success">Your Task has been Posted!</div>';
     }
     else {
-        echo '<div class="alert alert-danger">You have insufficiant funds.</div>';
+        echo '<div class="alert alert-danger"> Fix the Following: <br>';
+        foreach($krill as $krillp){
+            echo $krillp,'<br>';
+        }
+        echo '</div>';
     
     }
 }
