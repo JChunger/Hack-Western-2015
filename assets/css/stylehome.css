@@ -209,7 +209,8 @@ h6 {font-size: 16px;}
 /*	Hero
 	==================================================*/
 .mainbg {
-    width: 1440px;
+    width: 3840px;
+    height: auto;
     margin-left: -150px;
     margin-top: -200px;
     position: absolute;
