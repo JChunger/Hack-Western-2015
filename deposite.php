@@ -65,7 +65,7 @@ if (!isset($_SESSION['username'])) {
                              <label for="btcd">Amount (CAD):</label>
                         <div class="input-group">
                          
-                          <input id="price" type="text" class="form-control" placeholder=".01">
+                          <input id="price" type="text" class="form-control" placeholder="1">
                           <span class="input-group-btn">
                             <button data-toggle="modal" data-target="#myModal" onclick="getbtc()" class="btn btn-default" type="button">Deposite!</button>
                             

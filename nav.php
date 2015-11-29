@@ -27,7 +27,14 @@
 	        <li>
 	          <a href="register.php">Sign Up</a>
 	        </li>
-              <?php } else {?>
+              <?php } else {
+
+$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
+$tree = $check1 -> fetchColumn(0);
+
+              
+              
+              ?>
                   <li>
                   <a href="post.php">Post</a>
                 </li>
@@ -42,6 +49,9 @@
                 </li>
                 <li>
                     <a href="deposite.php">Deposite</a>
+                </li>
+                <li>
+                    <a href="withdraw.php">Withdraw</a>
                 </li>
                 <li>
                     <a >Balance: <?php $ighh = $tree/100000000; print number_format($ighh, 8);

@@ -138,7 +138,11 @@ if (isset($_POST['delbtn'])) {
                                 </tbody>
                 
             </table>
+<<<<<<< HEAD
       </div
+=======
+                              </div>
+>>>>>>> dan
         </section>
         
   </div>
