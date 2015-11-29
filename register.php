@@ -29,25 +29,27 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php //MAKE THIS LOOK LIKE AN ERROR
-		if(empty($_POST['email'])) {
-			?><h1>Please enter your email.</h1><?php
-		} elseif (empty($_POST['password'])) {
-			?><h1>Please enter a password.</h1><?php
-		} elseif (empty($_POST['passwordConfirm'])) {
-			?><h1>Please confirm your password.</h1><?php
-		} elseif (empty($_POST['username'])) {
-			?><h1>Please enter a username.</h1><?php
-		} elseif ($_POST['password'] != $_POST['passwordConfirm']) {
-			?><h1>Passwords do not match - please try again.</h1><?php
-		} else {
-			$sql = $odb -> prepare("INSERT INTO user (username, password, email) VALUES (:username, :password, :email)");
-			$sql = execute(array(':username' => $_POST['username'], ':password' => $_POST[hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:')], ':email' => $_POST['email']));
-			
-			$resultQuery = $odb -> query("SELECT uid FROM users WHERE email = '" . $_POST['email'] . "'");
-			$uid = $resultQuery -> fetchColumn(0);
+		if(!empty($_POST)){
+			if(empty($_POST['email'])) {
+				?><h1>Please enter your email.</h1><?php
+			} elseif (empty($_POST['password'])) {
+				?><h1>Please enter a password.</h1><?php
+			} elseif (empty($_POST['passwordConfirm'])) {
+				?><h1>Please confirm your password.</h1><?php
+			} elseif (empty($_POST['username'])) {
+				?><h1>Please enter a username.</h1><?php
+			} elseif ($_POST['password'] != $_POST['passwordConfirm']) {
+				?><h1>Passwords do not match - please try again.</h1><?php
+			} else {
+				$sql = $odb -> prepare("INSERT INTO user (username, password, email) VALUES (:username, :password, :email)");
+				$sql = execute(array(':username' => $_POST['username'], ':password' => $_POST[hash_hmac('sha512', $_POST['password'], 'few!#@$fSFaflF:a^sdD:')], ':email' => $_POST['email']));
+				
+				$resultQuery = $odb -> query("SELECT uid FROM users WHERE email = '" . $_POST['email'] . "'");
+				$uid = $resultQuery -> fetchColumn(0);
 
-			?>
-			<meta http-equiv="Location" content="email-verif.php?uid=<?php echo($id); ?>&email=<?php echo($email); ?>" > <?php
+				?>
+				<meta http-equiv="Location" content="email-verif.php?uid=<?php echo($id); ?>&email=<?php echo($email); ?>" > <?php
+			}
 		}
 	?>
 
