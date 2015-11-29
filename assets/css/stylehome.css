@@ -213,7 +213,7 @@ h6 {font-size: 16px;}
     margin-left: -150px;
     margin-top: -200px;
     position: absolute;
-    z-index: -100;
+    z-index: 100;
 }
 .bglayer {
     background: #ff9900;
