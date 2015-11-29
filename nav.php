@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 <?php
 	require_once 'includes/db.php';
 	$check1 = $odb -> query("SELECT `balance` FROM `users` WHERE ID = '".$_SESSION['ID']."'");
 	$tree = $check1 -> fetchColumn(0);
 ?>
-=======
 
->>>>>>> dan
 <!-- Start Header
 	================================================== -->
 	<header id="header" class="navbar navbar-inverse navbar-fixed-top" role="banner">

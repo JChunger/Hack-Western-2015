@@ -26,7 +26,9 @@
 	<body background="assets\images\mainbg.jpg">
 	
 	<?php
+		if($_POST['']){
 
+		}
 	?>
 
 	<!-- Start Hero Section
@@ -39,18 +41,18 @@
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="section-1">
-                        <form class="form-signin">
-                        <h2 class="form-signin-heading2">Sign up</h2>
-                        <label for="inputnewUsername" class="sr-only">Email address</label>
-                        <input type="newuser" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-                        <label for="inputnewPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <label for="inputconfirml" class="sr-only">Email address</label>
-                        <input type="confirm" id="inputEmail" class="form-control" placeholder="Password Confirmation" required autofocus>
-                        <label for="inputnewemail" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Email" required>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                        </form>
+                    	<form class="form-signin">
+                    		<h2 class="form-signin-heading2">Sign up</h2>
+                    		<label for="username" class="sr-only">Email address</label>
+                    		<input type="email" id="email" class="form-control" placeholder="Email address" required autofocus>
+                    		<label for="password" class="sr-only">Passwords</label>
+                    		<input type="password" id="password" class="form-control" placeholder="Password" required>
+                    		<label for="passwordConfirm" class="sr-only">Confirm Password</label>
+                    		<input type="password" id="passwordConfirm" class="form-control" placeholder="Password Confirmation" required>
+                    		<label text="username" class="sr-only">Username</label>
+                    		<input type="text" id="username" class="form-control" placeholder="Username" required>
+                    		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                    	</form>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
