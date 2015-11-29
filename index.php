@@ -26,7 +26,7 @@
 		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
 		<link href="assets/css/stylehome.css" rel="stylesheet">
 	</head>
-	<body background="assets\images\mainbg.jpg">
+	<body>
 	
 	<?php
 		include 'nav.php';

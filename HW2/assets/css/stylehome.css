@@ -216,6 +216,19 @@ h6 {font-size: 16px;}
     margin-top: -290px;
     max-width: 275px;
 }
+@media screen and (max-width:992px) {
+    .bglayer {width: 1050px;}
+}
+@media (max-width:1200px) {
+    .maingraphic {display: none;}
+}
+@media screen and (max-width:687px) {
+    .maintitle { font-size:3em; }
+}
+@media screen and (max-width: 768p) {
+    .bglayer {display: none;}
+    
+}
 
 
 /*	Responsive

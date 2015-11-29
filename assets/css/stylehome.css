@@ -209,7 +209,7 @@ h6 {font-size: 16px;}
 /*	Hero
 	==================================================*/
 .mainbg {
-    width: 1440px;
+    width: 3840px;
     margin-left: -150px;
     margin-top: -200px;
     position: absolute;
@@ -245,7 +245,7 @@ h6 {font-size: 16px;}
 @media screen and (max-width:992px) {
     .bglayer {width: 1050px;}
 }
-@media screen and (max-width:1200px) {
+@media (max-width:1200px) {
     .maingraphic {display: none;}
 }
 @media screen and (max-width:687px) {
