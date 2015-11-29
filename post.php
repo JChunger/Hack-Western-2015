@@ -139,7 +139,7 @@ if (isset($_POST['delbtn'])) {
                                 </tbody>
 								
             </table>
-	    </div
+                              </div>
         </section>
         
 	</div>
