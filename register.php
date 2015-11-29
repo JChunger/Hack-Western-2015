@@ -77,7 +77,7 @@ if (isset($_SESSION['username'])) {
                     		<input type="password" name="passwordConfirm" class="form-control" placeholder="Password Confirmation" required>
                     		<label text="username" class="sr-only">Username</label>
                     		<input type="text" name="username" class="form-control" placeholder="Username" required>
-                    		<button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                            <center><button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button></center>
                     		<center style="margin-top:5px;"><a class="logsign" href="login.php">Already Have an Account? Log in here.</a></center>
                     	</form>
                     </div>
