@@ -78,7 +78,7 @@ if (isset($_SESSION['username'])) {
                     		<label text="username" class="sr-only">Username</label>
                     		<input type="text" name="username" class="form-control" placeholder="Username" required>
                     		<button name="btn" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                    		<center style="margin-top:5px;"><a class="logsign" href="login.php">Already Have an Account? Sign in.</a></center>
+                    		<center style="margin-top:5px;"><a class="logsign" href="login.php">Already Have an Account? Log in here.</a></center>
                     	</form>
                     </div>
                 </div>
