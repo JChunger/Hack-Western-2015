@@ -82,9 +82,9 @@ if (!isset($_SESSION['username'])) {
 
                         ?>
                             <p><?php 
-                            echo 'On Hold: ', $lim/100000000;
+                            echo 'On Hold: ', print number_format($lim/100000000, 8);
 
-                                    echo '<br> Max Withdraw: ', $ighh - $lim/100000000;
+                                    echo '<br> Max Withdraw: ',print number_format( $ighh - $lim/100000000, 8);
                                 ?></p>
                                 
                         <div style="WIDTH:100%;" class="input-group">
