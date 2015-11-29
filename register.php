@@ -84,7 +84,7 @@ if (isset($_SESSION['username'])) {
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <div class="section-2">
-                        <h1>About BitFor.me</h1>
+                        <h1>About</h1>
                         <br>
                         <img src="svg/BitForMe.svg">
                         <br>
