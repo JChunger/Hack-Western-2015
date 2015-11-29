@@ -26,7 +26,7 @@
 		<link href="assets/css/prettyPhoto.css" rel="stylesheet">
 		<link href="assets/css/stylehome.css" rel="stylesheet">
 	</head>
-	<body class="mainbg" src="assets/images/mainbg.jpg">
+	<body>
 	
 	<?php
 		include 'nav.php';
@@ -35,9 +35,11 @@
 	<!-- Start Hero Section
 	================================================== -->
 	<section id="main" class="section">
+        <img class="mainbg" src="assets/images/mainbg.jpg">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-sm-12">
+                    <img class="mainbg" src="assets/images/mainbg.jpg">
                     <div class="bglayer">
                         <p style="color:#ff9900">d</p>
                     </div>
